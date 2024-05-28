@@ -6,10 +6,23 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: Text(
+          'WithU',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Color(0xFFACCA69),
       ),
-      body: Center(
-        child: Text('This is the home screen', style: TextStyle(fontSize: 24)),
+      body: Align(
+        alignment: Alignment.bottomCenter, // 화면 하단에 배치
+        child: Padding(
+          padding: const EdgeInsets.all(50.0), // 여백 추가
+          child: Text(
+            '언제나 당신 곁에 함께',
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
       ),
     );
   }
