@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../AboutKiosk/KioskInfo.dart';
 import 'dart:async';
 
 class HomeScreen extends StatelessWidget {
@@ -23,7 +24,12 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => KioskInfo()),
+                    );
+                  },
                   child: Text('키오스크 안내',
                       style: TextStyle(
                         fontSize: 20
