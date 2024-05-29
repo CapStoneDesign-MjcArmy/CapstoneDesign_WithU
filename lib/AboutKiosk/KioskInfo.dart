@@ -22,7 +22,9 @@ class KioskInfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //이 부분에 음식점 페이지 라우팅
+                  },
                   child: Text('음식점',
                     style: TextStyle(
                         fontSize: 25,
@@ -36,7 +38,9 @@ class KioskInfo extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //카페 페이지 라우팅
+                  },
                   child: Text('카페',
                     style: TextStyle(
                         fontSize: 25,
@@ -58,7 +62,9 @@ class KioskInfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //무인민원발급기 페이지 라우팅
+                  },
                   child: Text('무인민원발급기',
                     style: TextStyle(
                         fontSize: 15,
@@ -72,9 +78,10 @@ class KioskInfo extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
-                  child: Text('KTX / 열차',
-                    style: TextStyle(
+                  onPressed: () {
+                    // ktx/열차 페이지 라우팅
+                  },
+                  child: Text('KTX / 열차', style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                     ),),
