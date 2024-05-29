@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../AboutKiosk/KioskInfo.dart';
+import 'package:withu/Camera/CameraScreen.dart';
 import 'dart:async';
 
 class HomeScreen extends StatelessWidget {
@@ -61,7 +62,14 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 50.0),
             child: Center(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CameraScreen(),
+                    ),
+                  );
+                },
                 child: Text('키오스크 돋보기''(카메라 켜기)',
                 style: TextStyle(
                   fontSize: 20
