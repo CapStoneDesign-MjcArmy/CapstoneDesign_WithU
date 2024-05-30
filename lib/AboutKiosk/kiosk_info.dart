@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../AboutKiosk/cafe_kiosk.dart';
+import '../AboutKiosk/cafe_kiosk_selection.dart';
 
 class KioskInfo extends StatelessWidget {
   @override
