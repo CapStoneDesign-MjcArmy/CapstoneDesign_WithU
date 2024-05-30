@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../AboutKiosk/cafe_kiosk.dart';
 
 class KioskInfo extends StatelessWidget {
   @override
@@ -23,7 +24,10 @@ class KioskInfo extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    //이 부분에 음식점 페이지 라우팅
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CafeKiosk()),
+                    );
                   },
                   child: Text('음식점',
                     style: TextStyle(
