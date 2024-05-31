@@ -23,12 +23,7 @@ class KioskInfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => CafeKiosk()),
-                    );
-                  },
+                  onPressed: () {},
                   child: Text('음식점',
                     style: TextStyle(
                         fontSize: 25,
@@ -43,7 +38,10 @@ class KioskInfo extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    //카페 페이지 라우팅
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CafeKiosk()),
+                    );
                   },
                   child: Text('카페',
                     style: TextStyle(
