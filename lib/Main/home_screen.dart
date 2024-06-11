@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../AboutKiosk/KioskInfo.dart';
-import 'package:withu/Camera/CameraScreen.dart';
+import '../AboutKiosk/kiosk_info.dart';
+import 'package:withu/Camera/camera_screen.dart';
 import 'dart:async';
 
 class HomeScreen extends StatelessWidget {

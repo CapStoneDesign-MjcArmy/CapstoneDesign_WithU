@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../AboutKiosk/cafe_kiosk_selection.dart';
 
 class KioskInfo extends StatelessWidget {
   @override
@@ -22,9 +23,7 @@ class KioskInfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                    //이 부분에 음식점 페이지 라우팅
-                  },
+                  onPressed: () {},
                   child: Text('음식점',
                     style: TextStyle(
                         fontSize: 25,
@@ -39,7 +38,10 @@ class KioskInfo extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    //카페 페이지 라우팅
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CafeKiosk()),
+                    );
                   },
                   child: Text('카페',
                     style: TextStyle(
