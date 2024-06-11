@@ -17,7 +17,7 @@ class CcimMain extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'assets/backgroundImg.png', // 배경 이미지 경로
+            'assets/images/backgroundImg.png', // 배경 이미지 경로
             fit: BoxFit.cover, // 화면 전체를 덮도록 설정
           ),
           Column(

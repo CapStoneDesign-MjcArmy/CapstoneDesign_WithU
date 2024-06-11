@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../AboutKiosk/cafe_kiosk_selection.dart';
+import '../AboutKiosk/Certificate/ccim_main.dart';
+
 
 class KioskInfo extends StatelessWidget {
   @override
@@ -63,9 +65,12 @@ class KioskInfo extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
+                ElevatedButton(//CcimMain
                   onPressed: () {
-                    //무인민원발급기 페이지 라우팅
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CcimMain()),
+                    );
                   },
                   child: Text('무인민원발급기',
                     style: TextStyle(

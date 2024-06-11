@@ -7,7 +7,7 @@ class CertificateSelectionPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/background.png'), // 백그라운드 이미지 파일 경로 설정
+            image: AssetImage('assets/images/backgroundImg.png'), // 백그라운드 이미지 파일 경로 설정
             fit: BoxFit.cover,
           ),
         ),
