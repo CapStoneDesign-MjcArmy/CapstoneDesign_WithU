@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:withu/AboutKiosk/Cafe/kioskcafemain.dart';
+
 class CafeKiosk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,18 +19,23 @@ class CafeKiosk extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                  },
-                  child: Text('브랜드 카페',
+
+                  onPressed: () {},
+                  child: Text(
+                    '브랜드 카페',
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                    ),),
+                    ),
+                  ),
+
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 400),
                     shape: RoundedRectangleBorder(
@@ -37,12 +44,21 @@ class CafeKiosk extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
-                  child: Text('일반 카페',
+
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => KioskCafeMain()),
+                    );
+                  },
+                  child: Text(
+                    '일반 카페',
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                    ),),
+                    ),
+                  ),
+
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 400),
                     shape: RoundedRectangleBorder(
@@ -64,4 +80,6 @@ class CafeKiosk extends StatelessWidget {
       ),
     );
   }
+
 }
+
