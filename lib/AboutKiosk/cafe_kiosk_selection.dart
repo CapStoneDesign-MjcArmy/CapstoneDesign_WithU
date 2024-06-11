@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:withu/AboutKiosk/Cafe/kioskcafemain.dart';
 
 class CafeKiosk extends StatelessWidget {
@@ -19,14 +18,11 @@ class CafeKiosk extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-
-                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-
                   onPressed: () {},
                   child: Text(
                     '브랜드 카페',
@@ -35,7 +31,6 @@ class CafeKiosk extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 400),
                     shape: RoundedRectangleBorder(
@@ -44,7 +39,6 @@ class CafeKiosk extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -58,7 +52,6 @@ class CafeKiosk extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 400),
                     shape: RoundedRectangleBorder(
@@ -80,6 +73,4 @@ class CafeKiosk extends StatelessWidget {
       ),
     );
   }
-
 }
-
