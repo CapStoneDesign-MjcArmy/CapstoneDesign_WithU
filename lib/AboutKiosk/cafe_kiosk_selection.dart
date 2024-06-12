@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:withu/AboutKiosk/Cafe/kioskcafemain.dart';
+import 'package:withu/AboutKiosk/Cafe/kiosk_cafe_main.dart';
 import '../AboutKiosk/Certificate/id_check.dart';
 
 class CafeKiosk extends StatelessWidget {
