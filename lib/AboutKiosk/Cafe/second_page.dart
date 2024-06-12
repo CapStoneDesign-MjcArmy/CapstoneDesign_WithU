@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'paidpage.dart';
+import 'paid_page.dart';
 
 class SecondPage extends StatelessWidget {
   @override

@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'secondpage.dart';
+import 'second_page.dart';
 
 // void main() {
 //   runApp(KioskCafeMain());
 // }
-
 class KioskCafeMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage(),
-    );
+    return MyHomePage();
   }
 }
 
@@ -18,7 +15,6 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-
 class _MyHomePageState extends State<MyHomePage> {
   List<Map<String, dynamic>> selectedContainers = [];
   final List<Map<String, dynamic>> items = [

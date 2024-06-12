@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'kioskcafemain.dart';
+import 'kiosk_cafe_main.dart';
 
 class PaidPage extends StatelessWidget {
   @override
