@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../AboutKiosk/cafe_kiosk_selection.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'Cafe/cafe_kiosk_selection.dart';
 import '../AboutKiosk/Certificate/certificate_main.dart';
 
 class KioskInfo extends StatelessWidget {
@@ -24,7 +25,16 @@ class KioskInfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Fluttertoast.showToast(
+                      msg: '미구현',
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.grey,
+                      fontSize: 25,
+                      textColor: Colors.white,
+                      toastLength: Toast.LENGTH_LONG,
+                    );
+                  },
                   child: Text('음식점',
                     style: TextStyle(
                         fontSize: 25,
@@ -85,10 +95,17 @@ class KioskInfo extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    // ktx/열차 페이지 라우팅
+                    Fluttertoast.showToast(
+                      msg: '미구현',
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.grey,
+                      fontSize: 25,
+                      textColor: Colors.white,
+                      toastLength: Toast.LENGTH_LONG,
+                    );
                   },
                   child: Text('KTX / 열차', style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                     ),),
                   style: ElevatedButton.styleFrom(
@@ -102,7 +119,7 @@ class KioskInfo extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(140.0),
             child: Text(
               '언제나 당신 곁에 함께',
               style: TextStyle(fontSize: 15),

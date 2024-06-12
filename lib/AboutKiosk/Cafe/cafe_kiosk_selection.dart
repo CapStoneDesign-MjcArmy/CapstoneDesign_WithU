@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:withu/AboutKiosk/Cafe/kiosk_cafe_main.dart';
-import '../AboutKiosk/Certificate/id_check.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CafeKiosk extends StatelessWidget {
   @override
@@ -25,9 +25,13 @@ class CafeKiosk extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SelectionPage()),
+                    Fluttertoast.showToast(
+                      msg: '미구현',
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.grey,
+                      fontSize: 25,
+                      textColor: Colors.white,
+                      toastLength: Toast.LENGTH_LONG,
                     );
                   },
                   child: Text(
