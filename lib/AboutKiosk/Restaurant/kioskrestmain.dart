@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'secondpage.dart';
-import 'package:withu/AboutKiosk/cafe_kiosk_selection.dart';
+import 'secondpagerest.dart';
+import 'selectorderfood.dart';
 
 // void main() {
 //   runApp(KioskCafeMain());
 // }
 
-class KioskCafeMain extends StatelessWidget {
+class KioskRestMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,87 +24,81 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Map<String, dynamic>> selectedContainers = [];
   final List<Map<String, dynamic>> items = [
     {
-      'name': '아메리카노',
+      'name': '사이다',
       'price': 2000,
-      'category': 'coffee',
-      'image': 'assets/images/coffee/americano.png'
+      'category': 'drink',
+      'image': 'assets/images/drink/cider.png'
     },
     {
-      'name': '카페라떼',
+      'name': '콜라',
+      'price': 2000,
+      'category': 'drink',
+      'image': 'assets/images/drink/coke.png'
+    },
+    {
+      'name': '레모네이드',
       'price': 3000,
-      'category': 'coffee',
-      'image': 'assets/images/coffee/cafelatte.png'
+      'category': 'drink',
+      'image': 'assets/images/drink/lemonade.png'
     },
     {
-      'name': '에스프레소',
+      'name': '치즈돈카츠',
+      'price': 8000,
+      'category': 'fried',
+      'image': 'assets/images/fried/cheezefried.png'
+    },
+    {
+      'name': '돈카츠',
+      'price': 7500,
+      'category': 'fried',
+      'image': 'assets/images/fried/forkfried.png'
+    },
+    {
+      'name': '새우튀김',
+      'price': 5000,
+      'category': 'fried',
+      'image': 'assets/images/fried/shirimp.png'
+    },
+    {
+      'name': '비빔면',
+      'price': 4000,
+      'category': 'noodle',
+      'image': 'assets/images/noodle/bibim.png'
+    },
+    {
+      'name': '멸치국수',
+      'price': 3500,
+      'category': 'noodle',
+      'image': 'assets/images/noodle/envy.png'
+    },
+    {
+      'name': '볶음면',
+      'price': 5000,
+      'category': 'noodle',
+      'image': 'assets/images/noodle/friednoodle.png'
+    },
+    {
+      'name': '라면',
       'price': 3000,
-      'category': 'coffee',
-      'image': 'assets/images/coffee/espresso.png'
+      'category': 'noodle',
+      'image': 'assets/images/noodle/ramen.png'
     },
     {
-      'name': '카푸치노',
-      'price': 3000,
-      'category': 'coffee',
-      'image': 'assets/images/coffee/cafuccino.png'
+      'name': '삶은 계란',
+      'price': 2000,
+      'category': 'sidemenu',
+      'image': 'assets/images/sidemenu/boilegg.png'
     },
     {
-      'name': '딸기 스무디',
-      'price': 3900,
-      'category': 'smudy',
-      'image': 'assets/images/smudy/strawberry.png'
-    },
-    {
-      'name': '바나나 스무디',
-      'price': 3900,
-      'category': 'smudy',
-      'image': 'assets/images/smudy/banana.png'
-    },
-    {
-      'name': '플레인 스무디',
-      'price': 3900,
-      'category': 'smudy',
-      'image': 'assets/images/smudy/plain.png'
-    },
-    {
-      'name': '딸기 주스',
-      'price': 4800,
-      'category': 'juice',
-      'image': 'assets/images/juice/strawberry.png'
-    },
-    {
-      'name': '키위 주스',
-      'price': 4800,
-      'category': 'juice',
-      'image': 'assets/images/juice/kiwi.png'
-    },
-    {
-      'name': '파인애플 주스',
-      'price': 4800,
-      'category': 'juice',
-      'image': 'assets/images/juice/pineapple.png'
-    },
-    {
-      'name': '베이글',
-      'price': 4500,
-      'category': 'dessert',
-      'image': 'assets/images/dessert/bagel.png'
-    },
-    {
-      'name': '카스테라',
-      'price': 4500,
-      'category': 'dessert',
-      'image': 'assets/images/dessert/castella.png'
-    },
-    {
-      'name': '소금빵',
-      'price': 4500,
-      'category': 'dessert',
-      'image': 'assets/images/dessert/saltbread.png'
+      'name': '공기밥',
+      'price': 1500,
+      'category': 'sidemenu',
+      'image': 'assets/images/sidemenu/rice.png'
     },
     // 필요한 만큼 더 추가
   ];
 
-  String selectedCategory = 'coffee';
+  String selectedCategory = 'noodle';
 
   double _calculateTotalPrice() {
     double total = 0.0;
@@ -215,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _navigateAndReset() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => SecondPage()),
+      MaterialPageRoute(builder: (context) => RestSecondPage()),
     ).then((_) {
       // Reset selectedContainers after returning from the second page
       setState(() {
@@ -233,7 +227,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _navigate() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => SecondPage()),
+      MaterialPageRoute(builder: (context) => RestSecondPage()),
     );
   }
 
@@ -262,7 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => CafeKiosk()),
+              MaterialPageRoute(builder: (context) => RestSelectOrder()),
             );
           },
         ),
@@ -276,13 +270,13 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Expanded(
                   child: TextButton(
-                    onPressed: () => _changeCategory('coffee'),
-                    child: Text('커피'),
+                    onPressed: () => _changeCategory('noodle'),
+                    child: Text('면류'),
                     style: TextButton.styleFrom(
-                      foregroundColor: selectedCategory == 'coffee'
+                      foregroundColor: selectedCategory == 'noodle'
                           ? Colors.black
                           : Colors.white,
-                      backgroundColor: selectedCategory == 'coffee'
+                      backgroundColor: selectedCategory == 'noodle'
                           ? Color.fromARGB(255, 255, 244, 194)
                           : Colors.lightBlue,
                       shape: RoundedRectangleBorder(
@@ -298,13 +292,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(
                   child: TextButton(
-                    onPressed: () => _changeCategory('smudy'),
-                    child: Text('스무디'),
+                    onPressed: () => _changeCategory('fried'),
+                    child: Text('튀김류'),
                     style: TextButton.styleFrom(
-                      foregroundColor: selectedCategory == 'smudy'
+                      foregroundColor: selectedCategory == 'fried'
                           ? Colors.black
                           : Colors.white,
-                      backgroundColor: selectedCategory == 'smudy'
+                      backgroundColor: selectedCategory == 'fried'
                           ? Color.fromARGB(255, 255, 244, 194)
                           : Colors.lightBlue,
                       shape: RoundedRectangleBorder(
@@ -320,13 +314,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(
                   child: TextButton(
-                    onPressed: () => _changeCategory('juice'),
-                    child: Text('주스'),
+                    onPressed: () => _changeCategory('sidemenu'),
+                    child: Text('사이드'),
                     style: TextButton.styleFrom(
-                      foregroundColor: selectedCategory == 'juice'
+                      foregroundColor: selectedCategory == 'sidemenu'
                           ? Colors.black
                           : Colors.white,
-                      backgroundColor: selectedCategory == 'juice'
+                      backgroundColor: selectedCategory == 'sidemenu'
                           ? Color.fromARGB(255, 255, 244, 194)
                           : Colors.lightBlue,
                       shape: RoundedRectangleBorder(
@@ -342,13 +336,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(
                   child: TextButton(
-                    onPressed: () => _changeCategory('dessert'),
-                    child: Text('디저트'),
+                    onPressed: () => _changeCategory('drink'),
+                    child: Text('음료'),
                     style: TextButton.styleFrom(
-                      foregroundColor: selectedCategory == 'dessert'
+                      foregroundColor: selectedCategory == 'drink'
                           ? Colors.black
                           : Colors.white,
-                      backgroundColor: selectedCategory == 'dessert'
+                      backgroundColor: selectedCategory == 'drink'
                           ? Color.fromARGB(255, 255, 244, 194)
                           : Colors.lightBlue,
                       shape: RoundedRectangleBorder(

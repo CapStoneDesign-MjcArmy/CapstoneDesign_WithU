@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'kioskcafemain.dart';
+import 'kioskrestmain.dart';
 import 'package:withu/AboutKiosk/kiosk_info.dart';
 
-class SelectOrder extends StatelessWidget {
+class RestSelectOrder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,22 +21,21 @@ class SelectOrder extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: 50, width: 50),
-          Image.asset('assets/images/cafe.png',
-              width: 350, height: 550, fit: BoxFit.fill),
+          SizedBox(height: 200, width: 50),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFACCA69),
+                      backgroundColor: Color.fromARGB(255, 119, 255, 180),
+                      minimumSize: Size(150, 400),
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => KioskCafeMain()),
+                            builder: (context) => KioskRestMain()),
                       );
                     },
                     child: Column(
@@ -59,12 +58,13 @@ class SelectOrder extends StatelessWidget {
                     )),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFFACCA69),
+                    backgroundColor: Color.fromARGB(255, 128, 251, 255),
+                    minimumSize: Size(150, 400),
                   ),
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => KioskCafeMain()),
+                      MaterialPageRoute(builder: (context) => KioskRestMain()),
                     );
                   },
                   child: Column(
