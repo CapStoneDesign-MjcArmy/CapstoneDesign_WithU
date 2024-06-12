@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'splash_screen.dart';
-import 'home_screen.dart';
+
 void main() {
   runApp(MyApp());
 }

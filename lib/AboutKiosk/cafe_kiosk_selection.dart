@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:withu/AboutKiosk/Cafe/kioskcafemain.dart';
+import '../AboutKiosk/Certificate/id_check.dart';
 
 class CafeKiosk extends StatelessWidget {
   @override
@@ -19,12 +19,17 @@ class CafeKiosk extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0), // 여기를 변경했습니다.
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SelectionPage()),
+                    );
+                  },
                   child: Text(
                     '브랜드 카페',
                     style: TextStyle(
