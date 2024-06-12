@@ -79,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: Text('키오스크 돋보기''(카메라 켜기)',
+                child: Text('키오스크 돋보기''\n''(카메라 켜기)',
                 style: TextStyle(
                   fontSize: 20
                 ),),
