@@ -67,6 +67,10 @@ flutter:
   assets:
     - assets/images/card.png
     - assets/images/cafe.png
+    - assets/images/coffee/
+    - assets/images/smudy/
+    - assets/images/juice/
+    - assets/images/dessert/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

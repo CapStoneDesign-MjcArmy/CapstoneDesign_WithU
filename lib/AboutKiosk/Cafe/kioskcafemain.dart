@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'secondpage.dart';
+import 'package:withu/AboutKiosk/cafe_kiosk_selection.dart';
 
 // void main() {
 //   runApp(KioskCafeMain());
@@ -23,69 +24,87 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Map<String, dynamic>> selectedContainers = [];
   final List<Map<String, dynamic>> items = [
     {
-      'name': 'Item 1',
-      'price': 10.0,
-      'category': 'Category 1',
-      'image': 'https://via.placeholder.com/50'
+      'name': '아메리카노',
+      'price': 2000,
+      'category': 'coffee',
+      'image': 'assets/images/coffee/americano.png'
     },
     {
-      'name': 'Item 2',
-      'price': 20.0,
-      'category': 'Category 2',
-      'image': 'https://via.placeholder.com/50'
+      'name': '카페라떼',
+      'price': 3000,
+      'category': 'coffee',
+      'image': 'assets/images/coffee/cafelatte.png'
     },
     {
-      'name': 'Item 3',
-      'price': 30.0,
-      'category': 'Category 1',
-      'image': 'https://via.placeholder.com/50'
+      'name': '에스프레소',
+      'price': 3000,
+      'category': 'coffee',
+      'image': 'assets/images/coffee/espresso.png'
     },
     {
-      'name': 'Item 4',
-      'price': 40.0,
-      'category': 'Category 2',
-      'image': 'https://via.placeholder.com/50'
+      'name': '카푸치노',
+      'price': 3000,
+      'category': 'coffee',
+      'image': 'assets/images/coffee/cafuccino.png'
     },
     {
-      'name': 'Item 5',
-      'price': 50.0,
-      'category': 'Category 1',
-      'image': 'https://via.placeholder.com/50'
+      'name': '딸기 스무디',
+      'price': 3900,
+      'category': 'smudy',
+      'image': 'assets/images/smudy/strawberry.png'
     },
     {
-      'name': 'Item 6',
-      'price': 60.0,
-      'category': 'Category 2',
-      'image': 'https://via.placeholder.com/50'
+      'name': '바나나 스무디',
+      'price': 3900,
+      'category': 'smudy',
+      'image': 'assets/images/smudy/banana.png'
     },
     {
-      'name': 'Item 7',
-      'price': 70.0,
-      'category': 'Category 1',
-      'image': 'https://via.placeholder.com/50'
+      'name': '플레인 스무디',
+      'price': 3900,
+      'category': 'smudy',
+      'image': 'assets/images/smudy/plain.png'
     },
     {
-      'name': 'Item 8',
-      'price': 80.0,
-      'category': 'Category 2',
-      'image': 'https://via.placeholder.com/50'
+      'name': '딸기 주스',
+      'price': 4800,
+      'category': 'juice',
+      'image': 'assets/images/juice/strawberry.png'
     },
     {
-      'name': 'Item 9',
-      'price': 90.0,
-      'category': 'Category 1',
-      'image': 'https://via.placeholder.com/50'
+      'name': '키위 주스',
+      'price': 4800,
+      'category': 'juice',
+      'image': 'assets/images/juice/kiwi.png'
     },
     {
-      'name': 'Item 10',
-      'price': 100.0,
-      'category': 'Category 2',
-      'image': 'https://via.placeholder.com/50'
+      'name': '파인애플 주스',
+      'price': 4800,
+      'category': 'juice',
+      'image': 'assets/images/juice/pineapple.png'
+    },
+    {
+      'name': '베이글',
+      'price': 4500,
+      'category': 'dessert',
+      'image': 'assets/images/dessert/bagel.png'
+    },
+    {
+      'name': '카스테라',
+      'price': 4500,
+      'category': 'dessert',
+      'image': 'assets/images/dessert/castella.png'
+    },
+    {
+      'name': '소금빵',
+      'price': 4500,
+      'category': 'dessert',
+      'image': 'assets/images/dessert/saltbread.png'
     },
     // 필요한 만큼 더 추가
   ];
 
-  String selectedCategory = 'All';
+  String selectedCategory = 'coffee';
 
   double _calculateTotalPrice() {
     double total = 0.0;
@@ -236,7 +255,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('GridView Example'),
+        title: Text('메뉴 선택'),
+        automaticallyImplyLeading: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CafeKiosk()),
+            );
+          },
+        ),
       ),
       body: Column(
         children: [
@@ -245,13 +274,14 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               Expanded(
                 child: TextButton(
-                  onPressed: () => _changeCategory('All'),
-                  child: Text('All'),
+                  onPressed: () => _changeCategory('coffee'),
+                  child: Text('커피'),
                   style: TextButton.styleFrom(
-                    foregroundColor:
-                        selectedCategory == 'All' ? Colors.black : Colors.white,
-                    backgroundColor: selectedCategory == 'All'
-                        ? Colors.white
+                    foregroundColor: selectedCategory == 'coffee'
+                        ? Colors.black
+                        : Colors.white,
+                    backgroundColor: selectedCategory == 'coffee'
+                        ? Color.fromARGB(255, 255, 244, 194)
                         : Colors.lightBlue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
@@ -266,14 +296,14 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Expanded(
                 child: TextButton(
-                  onPressed: () => _changeCategory('Category 1'),
-                  child: Text('Category 1'),
+                  onPressed: () => _changeCategory('smudy'),
+                  child: Text('스무디'),
                   style: TextButton.styleFrom(
-                    foregroundColor: selectedCategory == 'Category 1'
+                    foregroundColor: selectedCategory == 'smudy'
                         ? Colors.black
                         : Colors.white,
-                    backgroundColor: selectedCategory == 'Category 1'
-                        ? Colors.white
+                    backgroundColor: selectedCategory == 'smudy'
+                        ? Color.fromARGB(255, 255, 244, 194)
                         : Colors.lightBlue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
@@ -288,14 +318,36 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Expanded(
                 child: TextButton(
-                  onPressed: () => _changeCategory('Category 2'),
-                  child: Text('Category 2'),
+                  onPressed: () => _changeCategory('juice'),
+                  child: Text('주스'),
                   style: TextButton.styleFrom(
-                    foregroundColor: selectedCategory == 'Category 2'
+                    foregroundColor: selectedCategory == 'juice'
                         ? Colors.black
                         : Colors.white,
-                    backgroundColor: selectedCategory == 'Category 2'
-                        ? Colors.white
+                    backgroundColor: selectedCategory == 'juice'
+                        ? Color.fromARGB(255, 255, 244, 194)
+                        : Colors.lightBlue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16),
+                        topRight: Radius.circular(16),
+                        bottomLeft: Radius.circular(0),
+                        bottomRight: Radius.circular(0),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  onPressed: () => _changeCategory('dessert'),
+                  child: Text('디저트'),
+                  style: TextButton.styleFrom(
+                    foregroundColor: selectedCategory == 'dessert'
+                        ? Colors.black
+                        : Colors.white,
+                    backgroundColor: selectedCategory == 'dessert'
+                        ? Color.fromARGB(255, 255, 244, 194)
                         : Colors.lightBlue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
@@ -311,55 +363,62 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
           Expanded(
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                crossAxisSpacing: 4.0,
-                mainAxisSpacing: 4.0,
-                childAspectRatio: 0.75,
-              ),
-              itemCount: filteredIndices.length,
-              itemBuilder: (context, index) {
-                int actualIndex = filteredIndices[index];
-                return GestureDetector(
-                  onTap: () {
-                    _showQuantityDialog(actualIndex);
-                  },
-                  child: Container(
-                    color: Colors.red,
-                    margin: EdgeInsets.all(4.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.network(
-                          items[actualIndex]['image'] ??
-                              'https://via.placeholder.com/50',
-                          width: 50,
-                          height: 50,
-                        ),
-                        SizedBox(height: 4.0),
-                        Text(
-                          items[actualIndex]['name'],
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
+            child: Container(
+              color: Color.fromARGB(255, 255, 244, 194),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  crossAxisSpacing: 4.0,
+                  mainAxisSpacing: 4.0,
+                  childAspectRatio: 0.75,
+                ),
+                itemCount: filteredIndices.length,
+                itemBuilder: (context, index) {
+                  int actualIndex = filteredIndices[index];
+                  return GestureDetector(
+                    onTap: () {
+                      _showQuantityDialog(actualIndex);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromARGB(255, 255, 218, 116),
+                            width: 2),
+                      ),
+                      margin: EdgeInsets.all(4.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            items[actualIndex]['image'],
+                            width: 50,
+                            height: 50,
                           ),
-                        ),
-                        SizedBox(height: 4.0),
-                        Text(
-                          '\$${items[actualIndex]['price']}',
-                          style: TextStyle(
-                            color: Colors.white,
+                          SizedBox(height: 1.0),
+                          Text(
+                            items[actualIndex]['name'],
+                            style: TextStyle(
+                              color: const Color.fromARGB(255, 0, 0, 0),
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ],
+                          SizedBox(height: 1.0),
+                          Text(
+                            '${items[actualIndex]['price']}원',
+                            style: TextStyle(
+                              color: const Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           ),
           Container(
+            color: Color.fromARGB(255, 255, 218, 169),
             height: 200, // Row의 높이를 늘림
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -368,15 +427,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: selectedContainers.map((item) {
                   int itemIndex = selectedContainers.indexOf(item);
                   return Container(
-                    color: Colors.blue,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                          color: Color.fromARGB(255, 146, 255, 125), width: 2),
+                    ),
                     width: 120, // 너비를 약간 늘림
                     height: 180, // 높이를 늘림
                     margin: EdgeInsets.all(4.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.network(
-                          item['image'] ?? 'https://via.placeholder.com/50',
+                        Image.asset(
+                          item['image'],
                           width: 50,
                           height: 50,
                         ),
@@ -384,14 +446,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           item['name'],
                           style: TextStyle(
-                            color: Colors.white,
+                            color: const Color.fromARGB(255, 0, 0, 0),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
-                          '\$${(item['price'] * item['quantity']).toStringAsFixed(2)}',
+                          '${(item['price'] * item['quantity'])}원',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: const Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                         Row(
@@ -399,7 +461,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             IconButton(
                               icon: Icon(Icons.remove,
-                                  color: Colors.white, size: 16),
+                                  color: const Color.fromARGB(255, 0, 0, 0),
+                                  size: 16),
                               onPressed: () => _decrementQuantity(itemIndex),
                               padding: EdgeInsets.zero,
                               constraints: BoxConstraints(),
@@ -407,13 +470,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             Text(
                               item['quantity'].toString(),
                               style: TextStyle(
-                                color: Colors.white,
+                                color: const Color.fromARGB(255, 0, 0, 0),
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             IconButton(
                               icon: Icon(Icons.add,
-                                  color: Colors.white, size: 16),
+                                  color: const Color.fromARGB(255, 0, 0, 0),
+                                  size: 16),
                               onPressed: () => _incrementQuantity(itemIndex),
                               padding: EdgeInsets.zero,
                               constraints: BoxConstraints(),
@@ -427,94 +491,97 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Column(
-                children: [
-                  Text('총 가격 ',
+          Container(
+            color: Color.fromARGB(255, 255, 218, 169),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    Text('총 가격 ',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    Text(
+                      '${_calculateTotalPrice()}원',
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
-                      )),
-                  Text(
-                    '${_calculateTotalPrice()}',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text('주문 수량',
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text('주문 수량',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    Text(
+                      '${_calculateTotalQuantity()}',
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
-                      )),
-                  Text(
-                    '${_calculateTotalQuantity()}',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                      ),
                     ),
+                  ],
+                ),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.green),
+                    shape:
+                        //버튼 모양을 네모로 변경
+                        MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                    )),
+                    //좌우 너비를 줄임
+                    minimumSize: MaterialStateProperty.all(Size(30, 50)),
                   ),
-                ],
-              ),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.green),
-                  shape:
-                      //버튼 모양을 네모로 변경
-                      MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                  )),
-                  //좌우 너비를 줄임
-                  minimumSize: MaterialStateProperty.all(Size(30, 50)),
+                  onPressed: _reset,
+                  child: Text(
+                    '주문 취소',
+                    style: TextStyle(fontSize: 10),
+                  ),
                 ),
-                onPressed: _reset,
-                child: Text(
-                  '주문 취소',
-                  style: TextStyle(fontSize: 10),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.green),
+                    shape:
+                        //버튼 모양을 네모로 변경
+                        MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                    )),
+                    //좌우 너비를 줄임
+                    minimumSize: MaterialStateProperty.all(Size(30, 50)),
+                  ),
+                  onPressed: _navigateAndReset,
+                  child: Text(
+                    '카드 결제',
+                    style: TextStyle(fontSize: 10),
+                  ),
                 ),
-              ),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.green),
-                  shape:
-                      //버튼 모양을 네모로 변경
-                      MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                  )),
-                  //좌우 너비를 줄임
-                  minimumSize: MaterialStateProperty.all(Size(30, 50)),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.green),
+                    shape:
+                        //버튼 모양을 네모로 변경
+                        MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                    )),
+                    //좌우 너비를 줄임
+                    minimumSize: MaterialStateProperty.all(Size(30, 50)),
+                  ),
+                  onPressed: _navigateAndReset,
+                  child: Text(
+                    '기타 결제',
+                    style: TextStyle(fontSize: 10),
+                  ),
                 ),
-                onPressed: _navigateAndReset,
-                child: Text(
-                  '카드 결제',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.green),
-                  shape:
-                      //버튼 모양을 네모로 변경
-                      MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                  )),
-                  //좌우 너비를 줄임
-                  minimumSize: MaterialStateProperty.all(Size(30, 50)),
-                ),
-                onPressed: _navigateAndReset,
-                child: Text(
-                  '기타 결제',
-                  style: TextStyle(fontSize: 10),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

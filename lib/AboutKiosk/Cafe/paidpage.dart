@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'kioskcafemain.dart';
+import 'package:withu/AboutKiosk/cafe_kiosk_selection.dart';
 
 class PaidPage extends StatelessWidget {
   @override
@@ -21,7 +22,7 @@ class PaidPage extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => KioskCafeMain()),
+                MaterialPageRoute(builder: (context) => CafeKiosk()),
               );
             },
             child: Text('처음화면으로 돌아가기'),

@@ -12,23 +12,36 @@ class KioskInfo extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        automaticallyImplyLeading: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => KioskInfo()),
+            );
+          },
+        ),
         backgroundColor: Color(0xFFACCA69),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
                   onPressed: () {},
-                  child: Text('음식점',
+                  child: Text(
+                    '음식점',
                     style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                    ),),
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 200),
                     shape: RoundedRectangleBorder(
@@ -43,11 +56,13 @@ class KioskInfo extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => CafeKiosk()),
                     );
                   },
-                  child: Text('카페',
+                  child: Text(
+                    '카페',
                     style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                    ),),
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 200),
                     shape: RoundedRectangleBorder(
@@ -59,7 +74,8 @@ class KioskInfo extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -67,11 +83,13 @@ class KioskInfo extends StatelessWidget {
                   onPressed: () {
                     //무인민원발급기 페이지 라우팅
                   },
-                  child: Text('무인민원발급기',
+                  child: Text(
+                    '무인민원발급기',
                     style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                    ),),
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 200),
                     shape: RoundedRectangleBorder(
@@ -83,10 +101,13 @@ class KioskInfo extends StatelessWidget {
                   onPressed: () {
                     // ktx/열차 페이지 라우팅
                   },
-                  child: Text('KTX / 열차', style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                    ),),
+                  child: Text(
+                    'KTX / 열차',
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 200),
                     shape: RoundedRectangleBorder(
