@@ -119,7 +119,7 @@ class KioskInfo extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(140.0),
+            padding: const EdgeInsets.all(100.0),
             child: Text(
               '언제나 당신 곁에 함께',
               style: TextStyle(fontSize: 15),
