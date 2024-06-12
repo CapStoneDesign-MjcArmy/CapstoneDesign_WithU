@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:withu/AboutKiosk/Cafe/kioskcafemain.dart';
 import 'package:withu/AboutKiosk/Cafe/selectorder.dart';
 import 'package:withu/AboutKiosk/kiosk_info.dart';
-import 'package:withu/Main/home_screen.dart';
 
 class CafeKiosk extends StatelessWidget {
   @override
@@ -22,7 +19,7 @@ class CafeKiosk extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
+              MaterialPageRoute(builder: (context) => KioskInfo()),
             );
           },
         ),

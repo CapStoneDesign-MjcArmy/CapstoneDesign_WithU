@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../AboutKiosk/cafe_kiosk_selection.dart';
+import '../AboutKiosk/Restaurant/selectorderfood.dart';
+import 'package:withu/Main/home_screen.dart';
 
 class KioskInfo extends StatelessWidget {
   @override
@@ -18,7 +20,7 @@ class KioskInfo extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => KioskInfo()),
+              MaterialPageRoute(builder: (context) => HomeScreen()),
             );
           },
         ),
@@ -34,7 +36,13 @@ class KioskInfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => RestSelectOrder()),
+                    );
+                  },
                   child: Text(
                     '음식점',
                     style: TextStyle(
