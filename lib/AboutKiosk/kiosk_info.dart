@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../AboutKiosk/cafe_kiosk_selection.dart';
-import '../AboutKiosk/Certificate/select_id_type.dart';
+import '../AboutKiosk/Certificate/certificate_main.dart';
 
 class KioskInfo extends StatelessWidget {
   @override
@@ -68,7 +68,7 @@ class KioskInfo extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CertificateSelectionPage()),
+                      MaterialPageRoute(builder: (context) => CertificateMain()),
                     );
                   },
                   child: Text('무인민원발급기',
