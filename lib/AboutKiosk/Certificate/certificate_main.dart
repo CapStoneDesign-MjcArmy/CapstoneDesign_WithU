@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:withu/AboutKiosk/Certificate/id_select.dart';
 
-class CcimMain extends StatelessWidget {
+class CertificateMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,19 +46,19 @@ class CcimMain extends StatelessWidget {
                   crossAxisSpacing: 10.0,
                   padding: const EdgeInsets.all(10.0),
                   children: [
-                    _buildButton(context, '주민등록', '동일: 무료 / 초본: 200원'),
-                    _buildButton(context, '지적, 토지, 건축', '수수료: 다양함'),
-                    _buildButton(context, '주민등록', '차량등록: 300원 인감: 1500원'),
-                    _buildButton(context, '보건건축', '무료'),
-                    _buildButton(context, '농지원부\n농업경영체', '수수료: 다양함'),
-                    _buildButton(context, '가족관계등록부', '500원'),
-                    _buildButton(context, '제적부', '활동: 500원 동본: 300원'),
-                    _buildButton(context, '병적증명서', '무료'),
-                    _buildButton(context, '지방세 세목별\n과세증명서', '전체과세: 800원'),
-                    _buildButton(context, '어선원부', '전월기: 1장당 700원'),
-                    _buildButton(context, '교육제증명\n대학교(원) 제외', '무료'),
-                    _buildButton(context, '국세증명', '무료'),
-                    _buildButton(context, '건강보험', '무료'),
+                    _buildButton(context, '주민등록', '동일: 무료 / 초본: 200원', CertificateSelectionPage()),
+                    _buildButton(context, '지적, 토지, 건축', '수수료: 다양함', OtherPage()),
+                    _buildButton(context, '주민등록', '차량등록: 300원 인감: 1500원', OtherPage()),
+                    _buildButton(context, '보건건축', '무료', OtherPage()),
+                    _buildButton(context, '농지원부\n농업경영체', '수수료: 다양함', OtherPage()),
+                    _buildButton(context, '가족관계등록부', '500원', OtherPage()),
+                    _buildButton(context, '제적부', '활동: 500원 동본: 300원', OtherPage()),
+                    _buildButton(context, '병적증명서', '무료', OtherPage()),
+                    _buildButton(context, '지방세 세목별\n과세증명서', '전체과세: 800원', OtherPage()),
+                    _buildButton(context, '어선원부', '전월기: 1장당 700원', OtherPage()),
+                    _buildButton(context, '교육제증명\n대학교(원) 제외', '무료', OtherPage()),
+                    _buildButton(context, '국세증명', '무료', OtherPage()),
+                    _buildButton(context, '건강보험', '무료', OtherPage()),
                   ],
                 ),
               ),
@@ -85,9 +86,14 @@ class CcimMain extends StatelessWidget {
     );
   }
 
-  Widget _buildButton(BuildContext context, String title, String subtitle) {
+  Widget _buildButton(BuildContext context, String title, String subtitle, Widget page) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => page),
+        );
+      },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -108,6 +114,9 @@ class CcimMain extends StatelessWidget {
         foregroundColor: Colors.white,
         padding: const EdgeInsets.all(8.0),
         minimumSize: Size(100, 80),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(0),
+        ),
       ),
     );
   }
@@ -125,6 +134,37 @@ class CcimMain extends StatelessWidget {
         foregroundColor: Colors.white,
         padding: const EdgeInsets.all(8.0),
         minimumSize: Size(80, 40),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(0),
+        ),
+      ),
+    );
+  }
+}
+
+class ResidentPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('주민등록'),
+      ),
+      body: Center(
+        child: Text('주민등록 페이지입니다.'),
+      ),
+    );
+  }
+}
+
+class OtherPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('기타 페이지'),
+      ),
+      body: Center(
+        child: Text('기타 페이지입니다.'),
       ),
     );
   }

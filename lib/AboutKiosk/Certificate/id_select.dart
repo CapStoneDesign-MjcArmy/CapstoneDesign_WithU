@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:withu/AboutKiosk/Certificate/certificate_main.dart';
 
 class CertificateSelectionPage extends StatelessWidget {
   @override
@@ -66,9 +67,9 @@ class CertificateSelectionPage extends StatelessWidget {
             Center(
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.8,
+                height: MediaQuery.of(context).size.height * 0.7,
                 decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.5),
+                  color: Colors.grey.withOpacity(0.3),
                   border: Border.all(color: Colors.white, width: 2),
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
@@ -85,6 +86,9 @@ class CertificateSelectionPage extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.grey,
         padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12), // 원하는 둥근 정도 설정
+        ),
       ),
       onPressed: () {
         // 버튼 눌렀을 때 동작 추가
@@ -118,7 +122,10 @@ class CertificateSelectionPage extends StatelessWidget {
         style: TextStyle(fontSize: 18),
       ),
       onPressed: () {
-        // 네비게이션 버튼 눌렀을 때 동작 추가
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => CertificateMain()),
+        );
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.yellow,
