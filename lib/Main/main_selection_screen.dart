@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../AboutKiosk/kiosk_info.dart';
+import '../AboutKiosk/kiosk_select_main_screen.dart';
 import 'package:withu/Camera/camera_screen.dart';
-import 'dart:async';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -43,7 +43,16 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Fluttertoast.showToast(
+                      msg: '미구현',
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.grey,
+                      fontSize: 25,
+                      textColor: Colors.white,
+                      toastLength: Toast.LENGTH_LONG,
+                    );
+                  },
                   child: Text('키오스크 찾기',
                     style: TextStyle(
                       fontSize: 20
