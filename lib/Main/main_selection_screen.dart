@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../AboutKiosk/kiosk_info.dart';
+import '../AboutKiosk/kiosk_select_main_screen.dart';
 import 'package:withu/Camera/camera_screen.dart';
-import 'dart:async';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -20,8 +20,7 @@ class HomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -32,10 +31,10 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => KioskInfo()),
                     );
                   },
-                  child: Text(
-                    '키오스크 안내',
-                    style: TextStyle(fontSize: 20),
-                  ),
+                  child: Text('키오스크 안내',
+                      style: TextStyle(
+                        fontSize: 20
+                      ),),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 200),
                     shape: RoundedRectangleBorder(
@@ -44,11 +43,20 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    '키오스크 찾기',
-                    style: TextStyle(fontSize: 20),
-                  ),
+                  onPressed: () {
+                    Fluttertoast.showToast(
+                      msg: '미구현',
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.grey,
+                      fontSize: 25,
+                      textColor: Colors.white,
+                      toastLength: Toast.LENGTH_LONG,
+                    );
+                  },
+                  child: Text('키오스크 찾기',
+                    style: TextStyle(
+                      fontSize: 20
+                    ),),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 200),
                     shape: RoundedRectangleBorder(
@@ -71,10 +79,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: Text(
-                  '키오스크 돋보기' '(카메라 켜기)',
-                  style: TextStyle(fontSize: 20),
-                ),
+                child: Text('키오스크 돋보기''\n''(카메라 켜기)',
+                style: TextStyle(
+                  fontSize: 20
+                ),),
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(150, 200),
                   shape: RoundedRectangleBorder(

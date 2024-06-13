@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../AboutKiosk/cafe_kiosk_selection.dart';
-import '../AboutKiosk/Restaurant/selectorderfood.dart';
-import 'package:withu/Main/main_selection_screen.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'Cafe/cafe_kiosk_selection.dart';
+import '../AboutKiosk/Certificate/certificate_main.dart';
 
 class KioskInfo extends StatelessWidget {
   @override
@@ -14,42 +14,32 @@ class KioskInfo extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        automaticallyImplyLeading: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
-            );
-          },
-        ),
         backgroundColor: Color(0xFFACCA69),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => RestSelectOrder()),
+                    Fluttertoast.showToast(
+                      msg: '미구현',
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.grey,
+                      fontSize: 25,
+                      textColor: Colors.white,
+                      toastLength: Toast.LENGTH_LONG,
                     );
                   },
-                  child: Text(
-                    '음식점',
+                  child: Text('음식점',
                     style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                    ),),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 200),
                     shape: RoundedRectangleBorder(
@@ -64,13 +54,11 @@ class KioskInfo extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => CafeKiosk()),
                     );
                   },
-                  child: Text(
-                    '카페',
+                  child: Text('카페',
                     style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                    ),),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 200),
                     shape: RoundedRectangleBorder(
@@ -82,22 +70,22 @@ class KioskInfo extends StatelessWidget {
             ),
           ),
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    //무인민원발급기 페이지 라우팅
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CertificateMain()),
+                    );
                   },
-                  child: Text(
-                    '무인민원발급기',
+                  child: Text('무인민원발급기',
                     style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                    ),),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 200),
                     shape: RoundedRectangleBorder(
@@ -107,15 +95,19 @@ class KioskInfo extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    // ktx/열차 페이지 라우팅
-                  },
-                  child: Text(
-                    'KTX / 열차',
-                    style: TextStyle(
+                    Fluttertoast.showToast(
+                      msg: '미구현',
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.grey,
                       fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                      textColor: Colors.white,
+                      toastLength: Toast.LENGTH_LONG,
+                    );
+                  },
+                  child: Text('KTX / 열차', style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                    ),),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 200),
                     shape: RoundedRectangleBorder(

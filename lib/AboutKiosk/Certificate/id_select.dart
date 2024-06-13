@@ -40,9 +40,9 @@ class CertificateSelectionPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      _buildCertificateButton(context, '주민등록표(초본)', 200),
+                      _buildCertificateButton(context, '주민등록표(초본)\n', 200, OtherPage()),
                       SizedBox(height: 20),
-                      _buildCertificateButton(context, '주민등록표(등본)', 200),
+                      _buildCertificateButton(context, '주민등록표(등본)\n', 200, OtherPage()),
                     ],
                   ),
                 ),
@@ -64,34 +64,26 @@ class CertificateSelectionPage extends StatelessWidget {
                 ),
               ],
             ),
-            Center(
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.7,
-                decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.3),
-                  border: Border.all(color: Colors.white, width: 2),
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
-              ),
-            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildCertificateButton(BuildContext context, String text, int price) {
+  Widget _buildCertificateButton(BuildContext context, String text, int price, Widget page) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.black87,
         padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12), // 원하는 둥근 정도 설정
         ),
       ),
       onPressed: () {
-        // 버튼 눌렀을 때 동작 추가
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => page),
+        );
       },
       child: Column(
         children: <Widget>[
@@ -122,10 +114,7 @@ class CertificateSelectionPage extends StatelessWidget {
         style: TextStyle(fontSize: 18),
       ),
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => CertificateMain()),
-        );
+        Navigator.pop(context);
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.yellow,
