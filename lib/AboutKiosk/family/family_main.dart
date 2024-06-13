@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../kiosk_select_main_screen.dart';
+// 다른 페이지는 실제로 구현되지 않았으므로, 여기에 임시 페이지로 설정해 둡니다.
 
 void main() {
   runApp(MyApp());
@@ -11,7 +13,14 @@ class MyApp extends StatelessWidget {
       title: '문서 선택',
       home: MainPage(),
       routes: {
-        '/documentSelection': (context) => DocumentSelectionScreen(),
+        '/documentSelection': (context) => KioskInfo(),
+        '/closedFamilyCertificate': (context) => TemporaryScreen(title: '폐쇄 가족관계증명서'),
+        '/basicCertificate': (context) => TemporaryScreen(title: '기본증명서'),
+        '/closedBasicCertificate': (context) => TemporaryScreen(title: '폐쇄 기본증명서'),
+        '/marriageCertificate': (context) => TemporaryScreen(title: '혼인관계증명서'),
+        '/closedMarriageCertificate': (context) => TemporaryScreen(title: '폐쇄 혼인관계증명서'),
+        '/adoptionCertificate': (context) => TemporaryScreen(title: '입양관계증명서'),
+        '/closedAdoptionCertificate': (context) => TemporaryScreen(title: '폐쇄 입양관계증명서'),
       },
     );
   }
@@ -38,14 +47,14 @@ class MainPage extends StatelessWidget {
 
 class DocumentSelectionScreen extends StatelessWidget {
   final List<Map<String, String>> documents = [
-    {'title': '가족관계증명서', 'price': '500원'},
-    {'title': '폐쇄 가족관계증명서', 'price': '500원'},
-    {'title': '기본증명서', 'price': '500원'},
-    {'title': '폐쇄 기본증명서', 'price': '500원'},
-    {'title': '혼인관계증명서', 'price': '500원'},
-    {'title': '폐쇄 혼인관계증명서', 'price': '500원'},
-    {'title': '입양관계증명서', 'price': '500원'},
-    {'title': '폐쇄 입양관계증명서', 'price': '500원'},
+    {'title': '가족관계증명서', 'price': '500원', 'route': '../familyCertificate'},
+    {'title': '폐쇄 가족관계증명서', 'price': '500원', 'route': '/closedFamilyCertificate'},
+    {'title': '기본증명서', 'price': '500원', 'route': '/basicCertificate'},
+    {'title': '폐쇄 기본증명서', 'price': '500원', 'route': '/closedBasicCertificate'},
+    {'title': '혼인관계증명서', 'price': '500원', 'route': '/marriageCertificate'},
+    {'title': '폐쇄 혼인관계증명서', 'price': '500원', 'route': '/closedMarriageCertificate'},
+    {'title': '입양관계증명서', 'price': '500원', 'route': '/adoptionCertificate'},
+    {'title': '폐쇄 입양관계증명서', 'price': '500원', 'route': '/closedAdoptionCertificate'},
   ];
 
   @override
@@ -80,7 +89,9 @@ class DocumentSelectionScreen extends StatelessWidget {
                 itemCount: documents.length,
                 itemBuilder: (context, index) {
                   return ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, documents[index]['route']!);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black54,
                       padding: EdgeInsets.all(10),
@@ -143,6 +154,24 @@ class DocumentSelectionScreen extends StatelessWidget {
             SizedBox(height: 20),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class TemporaryScreen extends StatelessWidget {
+  final String title;
+
+  TemporaryScreen({required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: Center(
+        child: Text('$title 페이지 (구현 예정)'),
       ),
     );
   }
