@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'paid_page.dart';
+import '/AboutKiosk/Cafe/paid_complete_page.dart';
 
 class SecondPage extends StatelessWidget {
   @override
@@ -13,7 +13,7 @@ class SecondPage extends StatelessWidget {
         children: <Widget>[
           Center(
             child: Text(
-              '카드를 입력해주세요.',
+              '카드를 리더기에 넣어주세요.',
               style: TextStyle(fontSize: 24),
             ),
           ),

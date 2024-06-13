@@ -42,9 +42,9 @@ class CertificateSelectionPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      _buildCertificateButton(context, '주민등록표(초본)\n', 200, Idinput()),
+                      _buildCertificateButton(context, '주민등록표(초본)\n', 200, Idinput(initialValue: '주민등록표(초본)')),
                       SizedBox(height: 20),
-                      _buildCertificateButton(context, '주민등록표(등본)\n', 200, OtherPage()),
+                      _buildCertificateButton(context, '주민등록표(등본)\n', 200, Idinput(initialValue: '주민등록표(등본)')),
                     ],
                   ),
                 ),

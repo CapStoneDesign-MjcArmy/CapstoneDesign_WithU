@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:withu/AboutKiosk/Certificate/id_select_type.dart';
-
+import '../family/family_main.dart';
 class CertificateMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class CertificateMain extends StatelessWidget {
                     _buildButton(context, '주민등록', '\n''차량등록: 300원\n인감: 1500원', OtherPage()),
                     _buildButton(context, '보건건축', '\n''무료', OtherPage()),
                     _buildButton(context, '농지원부\n농업경영체', '\n''수수료: 다양함', OtherPage()),
-                    _buildButton(context, '가족관계등록부', '\n''500원', OtherPage()),
+                    _buildButton(context, '가족관계등록부', '\n''500원', DocumentSelectionScreen()),
                     _buildButton(context, '제적부', '\n''활동: 500원 동본: 300원', OtherPage()),
                     _buildButton(context, '병적증명서', '\n''무료', OtherPage()),
                     _buildButton(context, '지방세 세목별\n과세증명서', '\n''전체과세: 800원', OtherPage()),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'second_page.dart';
+import 'paid_with_card.dart';
 import 'package:withu/AboutKiosk/Cafe/cafe_kiosk_selection.dart';
 
 // void main() {
