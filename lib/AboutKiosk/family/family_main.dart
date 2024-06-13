@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../kiosk_select_main_screen.dart';
-// 다른 페이지는 실제로 구현되지 않았으므로, 여기에 임시 페이지로 설정해 둡니다.
 
 void main() {
   runApp(MyApp());
@@ -10,146 +8,87 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '문서 선택',
-      home: MainPage(),
+      home: FamilyMain(),
       routes: {
-        '/documentSelection': (context) => KioskInfo(),
-        '/closedFamilyCertificate': (context) => TemporaryScreen(title: '폐쇄 가족관계증명서'),
-        '/basicCertificate': (context) => TemporaryScreen(title: '기본증명서'),
-        '/closedBasicCertificate': (context) => TemporaryScreen(title: '폐쇄 기본증명서'),
-        '/marriageCertificate': (context) => TemporaryScreen(title: '혼인관계증명서'),
-        '/closedMarriageCertificate': (context) => TemporaryScreen(title: '폐쇄 혼인관계증명서'),
-        '/adoptionCertificate': (context) => TemporaryScreen(title: '입양관계증명서'),
-        '/closedAdoptionCertificate': (context) => TemporaryScreen(title: '폐쇄 입양관계증명서'),
+        '/other': (context) => OtherPage(),
       },
     );
   }
 }
 
-class MainPage extends StatelessWidget {
+class FamilyMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('메인 페이지'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/documentSelection');
-          },
-          child: Text('문서 선택 페이지로 이동'),
-        ),
-      ),
-    );
-  }
-}
-
-class DocumentSelectionScreen extends StatelessWidget {
-  final List<Map<String, String>> documents = [
-    {'title': '가족관계증명서', 'price': '500원', 'route': '../familyCertificate'},
-    {'title': '폐쇄 가족관계증명서', 'price': '500원', 'route': '/closedFamilyCertificate'},
-    {'title': '기본증명서', 'price': '500원', 'route': '/basicCertificate'},
-    {'title': '폐쇄 기본증명서', 'price': '500원', 'route': '/closedBasicCertificate'},
-    {'title': '혼인관계증명서', 'price': '500원', 'route': '/marriageCertificate'},
-    {'title': '폐쇄 혼인관계증명서', 'price': '500원', 'route': '/closedMarriageCertificate'},
-    {'title': '입양관계증명서', 'price': '500원', 'route': '/adoptionCertificate'},
-    {'title': '폐쇄 입양관계증명서', 'price': '500원', 'route': '/closedAdoptionCertificate'},
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('문서 선택'),
-      ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/backgroundImg.png'),
+            image: AssetImage('assets/images/backgroundImg.png'), // 배경 이미지를 여기에 추가하세요
             fit: BoxFit.cover,
           ),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             Text(
               '발급을 원하시는 증명서를 선택하십시오.',
-              style: TextStyle(fontSize: 18, color: Colors.white),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
-            Expanded(
-              child: GridView.builder(
-                padding: EdgeInsets.all(20),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 3,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
+            SizedBox(height: 30),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CertificateButton('가족관계증명서'),
+                    CertificateButton('폐쇄 가족관계증명서'),
+                  ],
                 ),
-                itemCount: documents.length,
-                itemBuilder: (context, index) {
-                  return ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, documents[index]['route']!);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black54,
-                      padding: EdgeInsets.all(10),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Flexible(
-                          child: Text(
-                            documents[index]['title']!,
-                            style: TextStyle(fontSize: 14, color: Colors.white),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          documents[index]['price']!,
-                          style: TextStyle(fontSize: 12, color: Colors.yellow),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CertificateButton('기본증명서'),
+                    CertificateButton('폐쇄 기본증명서'),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CertificateButton('혼인관계증명서'),
+                    CertificateButton('폐쇄 혼인관계증명서'),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CertificateButton('입양관계증명서'),
+                    CertificateButton('폐쇄 입양관계증명서'),
+                  ],
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(Icons.home),
-                    label: Text('첫화면'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.yellow,
-                      foregroundColor: Colors.black,
-                    ),
-                  ),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(Icons.arrow_back),
-                    label: Text('이전화면'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.yellow,
-                      foregroundColor: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
+            Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                BottomButton(Icons.home, '첫화면', context, '/'),
+                BottomButton(Icons.arrow_back, '이전화면', context, '/other'),
+              ],
             ),
             Text(
               '안녕하세요. 무인민원발급기입니다.',
-              style: TextStyle(fontSize: 16, color: Colors.white),
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+              ),
             ),
             SizedBox(height: 20),
           ],
@@ -159,19 +98,94 @@ class DocumentSelectionScreen extends StatelessWidget {
   }
 }
 
-class TemporaryScreen extends StatelessWidget {
-  final String title;
+class CertificateButton extends StatelessWidget {
+  final String text;
+  CertificateButton(this.text);
 
-  TemporaryScreen({required this.title});
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/other');
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.grey[800],
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          child: Text(
+            text,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+            ),
+          ),
+        ),
+        SizedBox(height: 5),
+        Text(
+          '500원',
+          style: TextStyle(
+            color: Colors.yellow[700],
+            fontSize: 16,
+          ),
+        ),
+      ],
+    );
+  }
+}
 
+class BottomButton extends StatelessWidget {
+  final IconData icon;
+  final String text;
+  final BuildContext context;
+  final String route;
+
+  BottomButton(this.icon, this.text, this.context, this.route);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, route);
+          },
+          child: CircleAvatar(
+            radius: 30,
+            backgroundColor: Colors.yellow[700],
+            child: Icon(
+              icon,
+              color: Colors.black,
+              size: 30,
+            ),
+          ),
+        ),
+        SizedBox(height: 5),
+        Text(
+          text,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class OtherPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text('Other Page'),
       ),
       body: Center(
-        child: Text('$title 페이지 (구현 예정)'),
+        child: Text('This is the Other Page'),
       ),
     );
   }
