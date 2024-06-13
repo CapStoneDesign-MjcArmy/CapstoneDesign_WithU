@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:withu/AboutKiosk/Certificate/id_select.dart';
+import 'package:withu/AboutKiosk/Certificate/id_select_type.dart';
 
 class CertificateMain extends StatelessWidget {
   @override

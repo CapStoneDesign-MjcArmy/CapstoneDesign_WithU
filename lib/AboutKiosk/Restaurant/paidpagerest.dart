@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:withu/AboutKiosk/Cafe/kiosk_cafe_main.dart';
 import 'kioskrestmain.dart';
-import 'package:withu/AboutKiosk/cafe_kiosk_selection.dart';
-import 'package:withu/AboutKiosk/kiosk_info.dart';
+import 'package:withu/AboutKiosk/Cafe/cafe_kiosk_selection.dart';
+import 'package:withu/AboutKiosk/kiosk_select_main_screen.dart';
 
 class RestPaidPage extends StatelessWidget {
   @override

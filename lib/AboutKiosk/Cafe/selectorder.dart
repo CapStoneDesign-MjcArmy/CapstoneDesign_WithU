@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'kiosk_cafe_main.dart';
-import 'package:withu/AboutKiosk/kiosk_info.dart';
+import 'package:withu/AboutKiosk/kiosk_select_main_screen.dart';
 
 class SelectOrder extends StatelessWidget {
   @override

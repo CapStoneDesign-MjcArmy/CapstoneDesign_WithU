@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:withu/AboutKiosk/Certificate/certificate_main.dart';
+import 'package:withu/AboutKiosk/Certificate/id_check.dart';
+import 'package:withu/AboutKiosk/Certificate/input_id.dart';
 
 class CertificateSelectionPage extends StatelessWidget {
   @override
@@ -40,7 +42,7 @@ class CertificateSelectionPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      _buildCertificateButton(context, '주민등록표(초본)\n', 200, OtherPage()),
+                      _buildCertificateButton(context, '주민등록표(초본)\n', 200, Idinput()),
                       SizedBox(height: 20),
                       _buildCertificateButton(context, '주민등록표(등본)\n', 200, OtherPage()),
                     ],
