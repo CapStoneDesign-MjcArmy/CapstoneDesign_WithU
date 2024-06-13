@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
-import 'kiosk_cafe_main.dart';
-import 'package:withu/AboutKiosk/cafe_kiosk_selection.dart';
+import 'paidpagerest.dart';
 
-class PaidPage extends StatelessWidget {
+class RestSecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Paid Page'),
+        title: Text('Second Page'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Center(
             child: Text(
-              '결제가 완료되었습니다.',
+              '카드를 입력해주세요.',
               style: TextStyle(fontSize: 24),
             ),
+          ),
+          Container(
+            child: Image.asset('assets/images/card.png'),
           ),
           TextButton(
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => CafeKiosk()),
+                MaterialPageRoute(builder: (context) => RestPaidPage()),
               );
             },
-            child: Text('처음화면으로 돌아가기'),
+            child: Text('결제 완료하기'),
           ),
         ],
       ),

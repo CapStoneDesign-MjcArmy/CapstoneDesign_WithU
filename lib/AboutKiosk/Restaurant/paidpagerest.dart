@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'kiosk_cafe_main.dart';
+import 'package:withu/AboutKiosk/Cafe/kiosk_cafe_main.dart';
+import 'kioskrestmain.dart';
 import 'package:withu/AboutKiosk/cafe_kiosk_selection.dart';
+import 'package:withu/AboutKiosk/kiosk_info.dart';
 
-class PaidPage extends StatelessWidget {
+class RestPaidPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,7 @@ class PaidPage extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => CafeKiosk()),
+                MaterialPageRoute(builder: (context) => KioskInfo()),
               );
             },
             child: Text('처음화면으로 돌아가기'),
