@@ -1,4 +1,4 @@
-name: withu
+name: cap
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -27,25 +27,35 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+
+#Add Camera dependency
 dependencies:
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  camera: any
+  path_provider: any
+  path: any
+  fluttertoast: ^8.0.9
+  camera_android_camerax: ^0.6.5+5
+  collection: ^1.19.0
+  flutter_plugin_android_lifecycle: ^2.0.20
+  leak_tracker: ^10.0.5
+  leak_tracker_flutter_testing: 3.0.3
+  leak_tracker_testing: 3.0.1  # 호환 버전으로 수정
+  lints: ^4.0.0
+  material_color_utilities: 0.8.0  # 호환 버전으로 수정
+  meta: 1.12.0  # 호환 버전으로 수정
+  path_provider_android: ^2.2.5
+  test_api: 0.7.0  # 호환 버전으로 수정
+  vm_service: 14.2.1  # 호환 버전으로 수정
+  win32: ^5.5.1
   cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^4.0.0
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -59,8 +69,18 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/card.png
+    - assets/images/cafe.png
+    - assets/images/coffee/
+    - assets/images/smudy/
+    - assets/images/juice/
+    - assets/images/dessert/
+    - assets/images/noodle/
+    - assets/images/fried/
+    - assets/images/sidemenu/
+    - assets/images/drink/
+    - assets/images/backgroundImg.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
