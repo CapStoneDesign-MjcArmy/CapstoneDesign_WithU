@@ -35,6 +35,7 @@ dependencies:
   camera: any
   path_provider: any
   path: any
+  fluttertoast: ^8.0.9
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -75,6 +76,7 @@ flutter:
     - assets/images/fried/
     - assets/images/sidemenu/
     - assets/images/drink/
+    - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

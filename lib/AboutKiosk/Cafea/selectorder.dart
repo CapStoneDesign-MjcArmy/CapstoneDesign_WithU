@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'kiosk_cafe_main.dart';
+import 'kioskcafemain.dart';
 import 'package:withu/AboutKiosk/kiosk_info.dart';
+import 'package:withu/AboutKiosk/cafe_kiosk_selection.dart';
 
 class SelectOrder extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class SelectOrder extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => KioskInfo()),
+              MaterialPageRoute(builder: (context) => CafeKiosk()),
             );
           },
         ),

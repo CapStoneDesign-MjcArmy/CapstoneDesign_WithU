@@ -12,8 +12,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => HomeScreen()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => HomeScreen()));
     });
   }
 
@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('WelTrack', style: TextStyle(fontSize: 50)),
+            Text('WithU_', style: TextStyle(fontSize: 50)),
             SizedBox(height: 10), // 로딩바와 텍스트 사이의 간격
             Text('언제나 당신 곁에 함께', style: TextStyle(fontSize: 15)),
             SizedBox(height: 50),

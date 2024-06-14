@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:withu/AboutKiosk/Cafea/kioskcafemain.dart';
-import 'kioskrestmain.dart';
-import 'package:withu/AboutKiosk/cafe_kiosk_selection.dart';
+import 'kiosk_cafe_main.dart';
 import 'package:withu/AboutKiosk/kiosk_info.dart';
 
-class RestPaidPage extends StatelessWidget {
+class PaidPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
