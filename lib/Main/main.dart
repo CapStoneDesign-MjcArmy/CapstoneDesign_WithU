@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'SplashScreen.dart';
-import 'HomeScreen.dart';
+// import 'dart:async';
+import 'splash_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -18,4 +18,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
